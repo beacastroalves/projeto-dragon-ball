@@ -18,23 +18,17 @@ main::after {
 main .personagem {
   display: none;
   height: 100vh;
-  width: 100vw;
+  background-repeat: no-repeat;
 }
 
 main .personagem.selecionado {
   display: block;
 }
 
-main .personagem picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .conteudo {
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 45%;
 
   display: flex;
   flex-direction: column;
@@ -60,7 +54,7 @@ main .personagem picture img {
 }
 
 .botoes {
-  background-color: rgba(0,0,0, 0.3);
+  background-color: rgba(0,0,0, 0.03);
   position: fixed;
   top: 0;
   right: 0;
@@ -73,6 +67,7 @@ main .personagem picture img {
   align-items: center;
   justify-content: center;
   gap: 16px;
+  z-index: 1;
 }
 
 .botoes .botao {
@@ -91,13 +86,77 @@ main .personagem picture img {
 
 .botoes .botao.selecionado {
   transform: scale(1.15);
-  box-shadow: 0 0 10px #d9d9d9;
+  box-shadow: 0 0 12px #d9d9d9;
 }
 
 .botoes .botao.assassino.selecionado {
-  box-shadow: 0 0 10px #ff0000;
+  box-shadow: 0 0 12px #ff0000;
 }
 
 .botoes .botao.sobrevivente.selecionado {
-  box-shadow: 0 0 10px #00ff00;
+  box-shadow: 0 0 12px #00ff00;
 }
+
+#hillbilly {
+  background-image: url("../images/bg-hillbilly.png");
+}
+
+#trapper {
+  background-image: url("../images/bg-trapper.png");
+}
+
+#wraith {
+  background-image: url("../images/bg-wraith.png");
+}
+
+#claudette {
+  background-image: url("../images/bg-claudette-morel.png");
+}
+
+#jake {
+  background-image: url("../images/bg-jake-park.png");
+}
+
+#meg {
+  background-image: url("../images/bg-meg-thomas.png");
+}
+
+
+@media only screen and (max-width: 500px) {
+  .conteudo {
+    left: 15%;
+    right: 15%;
+    background: linear-gradient(260deg, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%);
+  }
+
+  .botoes {
+    background-color: rgba(0, 0, 0, 0);
+    min-width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    gap: 0;
+    z-index: 1;
+  }
+
+  .botoes .botao {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 45px;
+  }
+
+  .botoes .botao img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+
+  #hillbilly {
+    background-image: url("../images/bg-hillbilly-mobile.png");
+  }
+}
+
